@@ -18,7 +18,7 @@ services:
       - ./clickhouse/config.xml:/etc/clickhouse-server/config.xml
     command: /clickhouse/init/db_init.sh
     ports:
-      - "87678769:9000"
+      - "8769:9000"
       - "8767:8123"
     ulimits:
       nofile:
