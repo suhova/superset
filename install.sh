@@ -7,8 +7,7 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update && apt-cache policy docker-ce
 sudo apt install -y docker-ce
 sudo usermod -aG docker $(whoami)
-sudo systemctl status docker
-sudo systemctl start docker
+#sudo systemctl start docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo docker-compose -f docker-compose-non-dev.yml up
