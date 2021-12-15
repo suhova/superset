@@ -13,10 +13,10 @@ services:
     image: yandex/clickhouse-server:latest
     user: "root"
     restart: unless-stopped
-    volumes:
-      - ./clickhouse:/clickhouse/init
-      - ./clickhouse/config.xml:/etc/clickhouse-server/config.xml
-    command: /clickhouse/init/db_init.sh
+#    volumes:
+#      - ./clickhouse/db_init.sh:/clickhouse/db_init.sh
+#      - ./clickhouse/config.xml:/etc/clickhouse-server/config.xml
+#    command: /clickhouse/db_init.sh
     ports:
       - "8769:9000"
       - "8767:8123"
@@ -87,8 +87,6 @@ volumes:
   superset_home:
     external: false
   db_home:
-    external: false
-  clickhouse_home:
     external: false
   redis:
     external: false
