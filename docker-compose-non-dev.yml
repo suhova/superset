@@ -13,10 +13,13 @@ services:
     image: yandex/clickhouse-server:latest
     user: "root"
     restart: unless-stopped
+    volumes:
+      - ./clickhouse:/var/lib/clickhouse
+      - ./clickhouse/init/:/docker-entrypoint-initdb.d
 #    volumes:
-#      - ./clickhouse/db_init.sh:/clickhouse/db_init.sh
+#      - ./clickhouse/init-database.sh:/clickhouse/init-database.sh
 #      - ./clickhouse/config.xml:/etc/clickhouse-server/config.xml
-#    command: /clickhouse/db_init.sh
+#    command: /clickhouse/init-database.sh
     ports:
       - "8769:9000"
       - "8767:8123"
